@@ -1,0 +1,512 @@
+@import "bourbon/bourbon";
+@import "_modules/_all";
+
+.animation-wrap {
+	position: absolute;
+	width: 100%;
+	height: 75%;
+}
+
+.svg-item {
+	display: block;
+	width: 100%;
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.svg-wrap {
+	position: absolute;
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+/*==========================================
+	SLIDE 1
+============================================ */
+.animation-wrap--decide-discount {
+	left: 50%;
+	margin-left: -14em;
+  	bottom: -7em;
+  	width:38.7em;
+  	font-size: .75em;
+  	@include respond-to(expansionA__minor) {
+  		font-size: 1em;
+  	}
+  	@include respond-to(expansionA) {
+  		font-size: 1.2em;
+  	}
+  	@include respond-to(expansionB) {
+  		font-size: 1.4em;
+  	}
+  	@include respond-to(expansionC) {
+  		font-size: 1.6em;
+  	}
+  	@include respond-to(expansionD) {
+  		font-size: 1.7em;
+  	}
+  	@include respond-to(expansionE) {
+  		font-size: 1.8em;
+  	}
+}
+
+.discount-right-hand {
+	@include set-discount-start;
+	width: 16.75em;
+	height: 39.3em;
+	bottom: -14em;
+	left: 50%;
+	margin-left: -4em;
+	z-index: 20;
+	.in-view & {
+		@include animation(
+			touchCalendar 1s $smoothEaseOut .5s, 
+			moveHandBack 1s $smoothEaseOut 1.75s,
+			selectSlider 1s $smoothEaseOut 2.75s,
+			slideSlider 1s $smoothEaseOut 3.75s,
+			removeHand 1s $smoothEaseOut 5s
+		);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.discount-left-hand {
+	width: 34.5em;
+	height: 37em;
+	bottom: -3em;
+	left: 50%;
+	margin-left: -27em;
+	z-index: 10;
+}
+
+.app-screens {
+	width: 18.8em;
+	height: 14.3em;
+	left: 50%;
+	z-index:15;
+	margin-left: -13.16em;
+	bottom:18.1em;
+}
+
+.app-screens__screen1 {
+	width: 18.8em;
+	height: 14.3em;
+	top: 0;
+	left: 0;
+}
+
+.app-screens__screen2 {
+	@include screen2-start;
+	width: 18.8em;
+	height: 14.3em;
+	top: 0;
+	left: 0;
+	z-index: 16;
+	.in-view & {
+		@include animation(selectDate .25s $smoothEaseOut 1.5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.app-screens__screen3 {
+	@include screen3-start;
+	width: 18.8em;
+	height: 14.3em;
+	top: 0;
+	left: 0;
+	z-index: 17;
+	.in-view & {
+		@include animation(selectDiscount .25s $smoothEaseOut 1.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.progress-bar {
+	@include transform-origin(left top);
+	background: #9DAC3A;
+  	height: 1.69em;
+  	width: 1em;
+  	top: 9.87em;
+  	left: 4em;
+  	position: absolute;
+  	.in-view & {
+		@include animation(progressBar 1s $smoothEaseOut 3.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.indicators {
+	width: 4.4em;
+	top: 3.95em;
+	left: 2.6em;
+	.in-view & {
+		@include animation(moveIndicators 1s $smoothEaseOut 3.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.indicator-1 {
+	.in-view & {
+		@include animation(increaseValue 1s $smoothEaseOut 3.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+/*==========================================
+	SLIDE 2
+============================================ */
+.animation-wrap--guests {
+	font-size: .8em;
+	bottom: 0;
+	@include respond-to(expansionA__minor) {
+  		font-size: 1.2em;
+  	}
+  	@include respond-to(expansionA) {
+  		font-size: 1.4em;
+  	}
+  	@include respond-to(expansionB) {
+  		font-size: 1.6em;
+  	}
+  	@include respond-to(expansionC) {
+  		font-size: 1.8em;
+  	}
+  	@include respond-to(expansionD) {
+  		font-size: 1.9em;
+  	}
+  	@include respond-to(expansionE) {
+  		font-size: 2.2em;
+  	}
+}
+
+/* Clock ----------------- */
+.clock {
+	width: 6.6em;
+	height: 6.6em;
+	left: 50%;
+	margin-left: -3.3em;
+	bottom: 21em;
+}
+
+.clock__second {
+	.in-view & {
+		@include animation(clockRotate 2s linear 0);
+		@include animation-iteration-count(infinite);
+	}
+}
+
+.clock__minute {
+	.in-view & {
+		@include animation(clockRotate 24s linear 0);
+		@include animation-iteration-count(infinite);
+	}
+}
+
+.clock__hour{
+	.in-view & {
+		@include animation(clockRotate 288s linear 0);
+		@include animation-iteration-count(infinite);
+	}
+}
+
+/* Table things -----------*/
+.table {
+	width: 14.2em;
+	left: 50%;
+	margin-left: -7.1em;
+	bottom: 1.5em;
+	z-index: 10;
+}
+
+.plate1 {
+	@include from-top-start;
+	width: 3.3em;
+	top: -0.34em;
+  	left: 1.5em;
+  	z-index: 6;
+  	.in-view & {
+		@include animation(fallFromTop .5s $smoothEaseOut 1.15s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.plate2 {
+	@include from-top-start;
+	width: 3.3em;
+	top: -0.34em;
+  	right: 1.5em;
+  	z-index:6;
+  	.in-view & {
+		@include animation(fallFromTop .5s $smoothEaseOut 1.5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.mug-left {
+	@include from-top-start;
+	width: 2.6em;
+	top: -2.3226em;
+	left:2.5em;
+	z-index:5;
+	.in-view & {
+		@include animation(fallFromTop .5s $smoothEaseOut 1.2s, liftMug .8s $smoothEaseOut 2.6s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.mug-right {
+	@include from-top-start;
+	width: 2.6em;
+	top: -2.3226em;
+	right: 2.5em;
+	z-index:5;
+	.in-view & {
+		@include animation(fallFromTop .5s $smoothEaseOut 1.3s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.spoon {
+	@include from-top-start;
+	width: 3.75em;
+	top: -0.4325em;
+	right: 0em;
+	.in-view & {
+		@include animation(fallFromTop .5s $smoothEaseOut 1.5s, liftSpoon .8s $smoothEaseOut 2.8s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+/*Guests --------------*/
+.guest-left {
+	@include guest-left-start;
+	width: 9.2em;
+	height: 19.2em;
+	bottom: 1em;
+	left: 50%;
+	margin-left: -14em;
+	.in-view & {
+		@include animation(guestLeft .75s $smoothEaseOut .5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.guest-left-body {
+	width: 9.2em;
+	z-index:50;
+}
+
+.guest-left-arm {
+	@include transform-origin(left top);
+	@include left-guest-arm-start;
+	width: 7.5em;
+	top: 7em;
+  	left: 2.5em;
+  	z-index: 9;
+  	.in-view & {
+		@include animation(leftGuestArm 1s $smoothEaseOut 2.5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.guest-left-arm-front{
+	@include transform-origin(left top);
+	@include left-guest-arm-front-start;
+	width: 7.5em;
+	top: 6.5em;
+  	left: 1.5em;
+  	z-index: 200;
+  	.in-view & {
+		@include animation(leftGuestArmFront 1.25s $smoothEaseOut 2.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.guest-right {
+	@include guest-right-start;
+	width: 9.2em;
+	height: 18.35em;
+	bottom: 1em;
+	left: 50%;
+	margin-left: 4.5em;
+	.in-view & {
+		@include animation(guestRight .75s $smoothEaseOut .5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.guest-right-arm {
+	@include transform-origin(right top);
+	@include right-guest-arm-start;
+	width: 7.5em;
+	left: -1em;
+  	top: 5em;
+  	z-index: 9;
+  	.in-view & {
+		@include animation(rightGuestArm 1s $smoothEaseOut 2.75s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.guest-right-arm-front {
+	@include transform-origin(right top);
+	@include right-guest-arm-front-start;
+	width: 6.9em;
+	left: 0.5em;
+  	top: 5em;
+  	z-index: 200;
+  	.in-view & {
+		@include animation(rightGuestArmFront 1s $smoothEaseOut 2.8s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+/*==========================================
+	SLIDE 3
+============================================ */
+.animation-wrap--staff {
+	width: 28.6em;
+	height: 31.1em;
+	left: 50%;
+	margin-left: -14.3em;
+	bottom: 0;
+	font-size: .75em;
+	@include respond-to(expansionA__minor) {
+  		font-size: 1.1em;
+  	}
+  	@include respond-to(expansionA) {
+  		font-size: 1.2em;
+  	}
+  	@include respond-to(expansionB) {
+  		font-size: 1.3em;
+  		bottom: -2em;
+  	}
+  	@include respond-to(expansionC) {
+  		font-size: 1.4em;
+  	}
+  	@include respond-to(expansionD) {
+  		font-size: 1.6em;
+  	}
+  	@include respond-to(expansionE) {
+  		font-size: 2em;
+  	}
+}
+
+.staff-person {
+	width: 16.45em;
+	height: 16.7em;
+	left: 50%;
+	margin-left: -6.2em;
+	bottom: 18em;
+}
+
+.staff-person-body {
+	width: 10.15em;
+	height: 15.6em;
+	z-index: 20;
+}
+
+.staff-person-bg {
+	width: 13.9em;
+	bottom: 1.5em;
+  	left: -2.7em;
+	z-index: 10;
+}
+
+.staff-person-arm {
+	@include staff-arm-start;
+	width: 13em;
+	bottom: 7.2em;
+  	right: 0;
+	z-index: 15;
+	.in-view & {
+		@include animation(raiseArm 1s $smoothEaseOut 2.5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.staff-person-smile {
+	@include smile-start;
+	width: 2.4em;
+	bottom: 11.5em;
+  	left: 2.75em;
+	z-index: 25;
+	.in-view & {
+		@include animation(showSmile .25s $smoothEaseOut 2.2s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.x-out {
+	@include xout-start;
+	width: 7.4em;
+	left: 50%;
+	top: 50%;
+	margin-left: -3.7em;
+	margin-top: -3.7em;
+	z-index:500;
+	.in-view & {
+		@include animation(xOut .2s $smoothEaseOut 0s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.qr-code {
+	@include material-start;
+	width: 5.15em;
+	bottom: 5em;
+	left: 50%;
+	margin-left: -14em;
+	z-index:500;
+	.in-view & {
+		@include animation(showMaterial .5s $bouncy .5s);
+		@include animation-fill-mode(forwards);
+	}
+	.x-out {
+		.in-view & {
+			@include animation-delay(1.5s);
+		}
+	}
+}
+
+.voucher {
+	@include material-start;
+	width: 7.7em;
+	bottom: 5em;
+	left: 50%;
+	margin-left: -3.85em;
+	z-index:500; 
+	.in-view & {
+		@include animation(showMaterial .5s $bouncy .65s);
+		@include animation-fill-mode(forwards);
+	}
+	.x-out {
+		.in-view & {
+			@include animation-delay(1.6s);
+		}
+	}
+}
+
+.manual {
+	@include material-start;
+	width: 7.8em;
+	bottom: 5em;
+	left: 50%;
+	margin-left: 7em;
+	z-index:500;
+	.in-view & {
+		@include animation(showMaterial .5s $bouncy .8s);
+		@include animation-fill-mode(forwards);
+	}
+	.x-out {
+		.in-view & {
+			@include animation-delay(1.7s);
+		}
+	}
+}
+
+
+
+@import "keyframes";

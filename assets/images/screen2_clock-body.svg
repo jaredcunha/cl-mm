@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="131.2px" height="131.8px" viewBox="0 0 131.2 131.8" enable-background="new 0 0 131.2 131.8" xml:space="preserve">
+<g id="shadow_4_">
+	<g>
+		<circle fill="#FFFFFF" cx="65.9" cy="65.9" r="65.3"/>
+	</g>
+</g>
+<g>
+	<g>
+		<g id="Clock_icon_2_">
+			<g id="Icon_3_">
+				<g id="icon_3_">
+					<g>
+						<circle fill="none" cx="65.9" cy="65.9" r="65.3"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<rect x="3.3" y="62.6" fill="#404141" width="9.9" height="6.6"/>
+				<rect x="118.6" y="62.6" fill="#404141" width="9.9" height="6.6"/>
+			</g>
+			<g>
+				<rect x="62.6" y="3.3" fill="#404141" width="6.6" height="9.9"/>
+				<rect x="62.6" y="118.6" fill="#404141" width="6.6" height="9.9"/>
+			</g>
+		</g>
+		<path fill="#404141" d="M65.9,0C29.5,0,0,29.5,0,65.9c0,36.4,29.5,65.9,65.9,65.9s65.9-29.5,65.9-65.9C131.8,29.5,102.3,0,65.9,0z
+			 M65.9,123.6c-31.8,0-57.7-25.9-57.7-57.7c0-31.8,25.9-57.7,57.7-57.7s57.7,25.9,57.7,57.7C123.6,97.7,97.7,123.6,65.9,123.6z"/>
+	</g>
+</g>
+</svg>

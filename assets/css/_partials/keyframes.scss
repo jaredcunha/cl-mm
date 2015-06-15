@@ -1,0 +1,237 @@
+@import "bourbon/bourbon";
+@import "_modules/_all";
+
+/*==========================================
+	SLIDE 1
+============================================ */
+@include keyframes(touchCalendar) {
+  from {
+    @include set-discount-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(moveHandBack) {
+  from {
+    @include all-finish;
+  }
+  to {
+    @include transform(translate3d(2em,6em,0));
+  }
+}
+
+@include keyframes(selectSlider) {
+  from {
+    @include transform(translate3d(2em,6em,0));
+  }
+  to {
+    @include transform(translate3d(-7em,3em,0));
+  }
+}
+
+@include keyframes(slideSlider) {
+  from {
+    @include transform(translate3d(-7em,3em,0));
+  }
+  to {
+    @include transform(translate3d(-2em,3em,0));
+  }
+}
+
+@include keyframes(removeHand) {
+  from {
+    @include transform(translate3d(-2em,3em,0));
+  }
+  to {
+    @include transform(translate3d(6em,6em,0));
+  }
+}
+
+@include keyframes(selectDate) {
+  from {
+    @include screen2-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(selectDiscount) {
+  from {
+    @include screen3-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(moveIndicators) {
+  from {
+    @include transform(translate3d(0,0,0));
+  }
+  to {
+    @include transform(translate3d(4.8em,0,0));
+  }
+}
+
+@include keyframes(increaseValue) {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@include keyframes(progressBar) {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5em;
+  }
+}
+
+@include keyframes(bounceUpAndDown) {
+  from {
+    @include transform(translate3d(0,.5em,0));
+  }
+  to {
+    @include transform(translate3d(0,0,0));
+  }
+}
+
+/*==========================================
+  SLIDE 2
+============================================ */
+@include keyframes(clockRotate) {
+  from {
+    @include transform(rotate(-360deg));
+  }
+  to {
+    @include transform(rotate(0deg));
+  }
+}
+@include keyframes(guestLeft) {
+  from {
+    @include guest-left-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(guestRight) {
+  from {
+    @include guest-right-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(fallFromTop) {
+  from {
+    @include from-top-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(leftGuestArm) {
+  from {
+    @include left-guest-arm-start;
+  }
+  to {
+    @include transform(rotate(-45deg));
+  }
+}
+
+@include keyframes(leftGuestArmFront) {
+  from {
+    @include left-guest-arm-front-start;
+  }
+  to {
+    @include transform(rotate(-10deg));
+  }
+}
+
+@include keyframes(rightGuestArm) {
+  from {
+    @include right-guest-arm-start;
+  }
+  to {
+    @include transform(rotate(30deg));
+  }
+}
+
+@include keyframes(rightGuestArmFront) {
+  from {
+    @include right-guest-arm-front-start;
+  }
+  to {
+    @include transform(rotate(0deg));
+  }
+}
+
+@include keyframes(liftMug) {
+  from {
+    @include all-finish;
+  }
+  to {
+    @include transform(translate3d(-.5em,-5em,0))
+  }
+}
+
+@include keyframes(liftSpoon) {
+  from {
+    @include all-finish;
+  }
+  to {
+    @include transform(translate3d(.25em,-5.5em,0))
+  }
+}
+
+/*==========================================
+  SLIDE 3
+============================================ */
+@include keyframes(showMaterial) {
+  from {
+    @include material-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(xOut) {
+  from {
+    @include xout-start;
+    opacity: 0;
+  }
+  to {
+    @include all-finish;
+    opacity: 1;
+  }
+}
+
+@include keyframes(showSmile) {
+  from {
+    @include smile-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(raiseArm) {
+  from {
+    @include staff-arm-start;
+  }
+  to {
+    @include all-finish;
+  }
+}

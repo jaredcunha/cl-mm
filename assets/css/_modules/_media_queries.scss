@@ -1,0 +1,40 @@
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+/*
+
+THE PLAN
+
+MEDIA QUERIES PRIORITY FOR NORMAL LAYOUT, THEN WE'LL CREATE 
+EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
+
+*/
+
+@mixin respond-to($media) {
+  @if $media == landscape-mobile {
+    @media only screen and (max-height: 370px) and (max-width: 700px) { @content; }
+  }
+  @if $media == expansionA__minor {
+    @media only screen and (min-width: 369px) { @content; }
+  }
+  @if $media == expansionA {
+    @media only screen and (min-width: 500px) { @content; }
+  }
+  @else if $media == expansionB {
+    @media only screen and (min-width: 600px) { @content; }
+  }
+  @else if $media == expansionC {
+    @media only screen and (min-width: 700px) { @content; }
+  }
+  @else if $media == expansionD {
+    @media only screen and (min-width: 1000px) { @content; }
+  }
+  @else if $media == expansionE {
+    @media only screen and (min-width: 1800px) { @content; }
+  }
+  @else if $media == expansionHeightA {
+    @media only screen and (min-height: 920px) { @content; }
+  }
+}
+
+

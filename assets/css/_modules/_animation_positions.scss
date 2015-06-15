@@ -1,0 +1,80 @@
+@import "bourbon/bourbon";
+@import "_global_vars";
+
+$smoothEaseOut: cubic-bezier(.21,.84,.62,.99);
+$bouncy: cubic-bezier(.42,.31,.47,1);
+
+/*==========================================
+	GENERIC ALL ANIMATION FINISH
+============================================ */
+@mixin all-finish {
+	@include transform(translate3d(0,0,0) rotate(0deg) scale(1));
+	opacity: 1;
+}
+
+/*==========================================
+	SLIDE 1
+============================================ */
+@mixin set-discount-start {
+	@include transform(translate3d(4em,100%,0));
+}
+
+@mixin screen2-start {
+	opacity: 0;
+}
+
+@mixin screen3-start {
+	opacity: 0;
+}
+
+/*==========================================
+	Slide 2
+============================================ */
+@mixin guest-left-start {
+	@include transform(translate3d(-400%,0,0));
+}
+
+@mixin guest-right-start {
+	@include transform(translate3d(400%,0,0));
+}
+
+@mixin from-top-start {
+	@include transform(translate3d(0,-100em,0));
+}
+
+@mixin left-guest-arm-start {
+	@include transform(rotate(0deg));
+}
+
+@mixin left-guest-arm-front-start {
+	@include transform(rotate(0deg));
+}
+
+@mixin right-guest-arm-start {
+	@include transform(rotate(-15deg));
+}
+
+@mixin right-guest-arm-front-start {
+	@include transform(rotate(-10deg));
+}
+
+/*==========================================
+	Slide 3
+============================================ */
+@mixin material-start {
+	@include transform(translate3d(0,50em,0));
+}
+
+@mixin xout-start {
+	@include transform(scale(8) translate3d(-2em,0,0));
+	opacity: 0;
+}
+
+@mixin smile-start {
+	@include transform(scale(.1));
+	opacity: 0;
+}
+
+@mixin staff-arm-start {
+	@include transform(translate3d(0,.75em,0));
+}

@@ -1,0 +1,110 @@
+@import "bourbon/bourbon";
+@import "_modules/_all";
+
+/*==========================================
+	BASE ELEMENTS
+============================================ */ 
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: "Proxima Nova Soft", helvetica;
+	background: #E8F4FA;
+	@include respond-to(expansionD) {
+		font-size: 68%;
+	}
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+nav > ul,
+nav > ul > li {
+	list-style: none;
+	padding: 0;
+}
+
+/*==========================================
+	WRAPPER
+============================================ */ 
+.page-bottom {
+	background: $link_color;
+}
+
+/*==========================================
+	CUE
+============================================ */
+.cue {
+	@include animation(bounceUpAndDown 1s linear 0s infinite);
+	@include animation-direction(alternate-reverse);
+	width: 2.7em;
+	position: absolute;
+	bottom: 2.5em;
+	left: 50%;
+	margin-left: -1.35em;
+	font-size: .75em;
+	opacity: .5;
+	z-index:1000;
+	@include respond-to(expansionB) {
+		font-size: 1em;
+	}
+}
+
+/*==========================================
+	BUTTONS
+============================================ */ 
+.btn {
+	border-radius: 5px;
+	background: #fff;
+	color: $link_color;
+	display: inline-block;
+	margin: 0 auto;
+	padding: .5em 1em;
+	text-decoration: none;
+	font-size: 2.5em;
+	width: auto;
+	@include respond-to(landscape-mobile) {
+		font-size: 1.8em;
+	}
+}
+
+/*==========================================
+	PAGE FOOTER
+============================================ */ 
+.page-footer {
+	text-align: center;
+	padding: 3em 0;
+}
+
+.copyright {
+	font-size: 1.8em;
+	color: rgba(255,255,255,.7);
+}
+
+.login-link {
+	font-size: 2em;
+}
+
+/*==========================================
+	QUICK NAV
+============================================ */ 
+.quick-nav {
+	text-align:center;
+}
+
+.quick-nav__list {
+	margin: 0;
+}
+
+.quick-nav__list__item {
+	font-size: 1.8em;
+	a {
+		padding: .5em;
+		display: inline-block;
+		color: rgba(255,255,255,.7);
+	}
+}
