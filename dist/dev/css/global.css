@@ -467,18 +467,28 @@ nav > ul > li {
   animation-direction: alternate-reverse;
   width: 2.7em;
   position: absolute;
-  bottom: 2.5em;
+  bottom: 1.5em;
   left: 50%;
   margin-left: -1.35em;
   font-size: .75em;
   opacity: .5;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 @media only screen and (min-width: 600px) {
   .cue {
     font-size: 1em;
   }
+}
+
+.cue__link {
+  display: block;
+  width: 4.7em;
+  height: auto;
+  position: relative;
+  z-index: 1000;
+  padding: 1em;
+  margin-left: -1.2em;
 }
 
 /*==========================================
