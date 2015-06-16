@@ -404,6 +404,9 @@ th {
 /*==========================================
 	Slide 3
 ============================================ */
+/*==========================================
+	SLIDE 4
+============================================ */
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
@@ -549,6 +552,9 @@ nav > ul > li {
 /*==========================================
 	Slide 3
 ============================================ */
+/*==========================================
+	SLIDE 4
+============================================ */
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
@@ -605,6 +611,10 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 
 .slide--staff {
   background: #e9ba26;
+}
+
+.slide--report {
+  background: #544aa1;
 }
 
 /*==========================================
@@ -774,6 +784,9 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 ============================================ */
 /*==========================================
 	Slide 3
+============================================ */
+/*==========================================
+	SLIDE 4
 ============================================ */
 /* ==========================================================================
    MEDIA QUERIES
@@ -1558,6 +1571,142 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 }
 
 /*==========================================
+	SLIDE 4
+============================================ */
+.animation-wrap--report {
+  font-size: .75em;
+}
+
+@media only screen and (min-width: 369px) {
+  .animation-wrap--report {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .animation-wrap--report {
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (max-height: 370px) and (max-width: 700px) {
+  .animation-wrap--report {
+    font-size: .75em;
+  }
+}
+
+@media only screen and (min-height: 920px) {
+  .animation-wrap--report {
+    font-size: 1.8em;
+  }
+}
+
+.left-hand {
+  width: 29.3em;
+  height: 44.4em;
+  bottom: -12em;
+  left: 50%;
+  margin-left: -26em;
+}
+
+.phone-hand {
+  width: 29.3em;
+  top: 0;
+  z-index: 5;
+}
+
+.fingers {
+  right: 0;
+  width: 3.5em;
+  z-index: 10;
+}
+
+.activate-screens {
+  z-index: 7;
+  left: 18.8em;
+  top: 1em;
+}
+
+.activate-screen1 {
+  width: 7.7em;
+}
+
+.activate-screen2 {
+  width: 7.7em;
+  opacity: 0;
+}
+
+.in-view .activate-screen2 {
+  -webkit-animation: activation-enabled 0.5s cubic-bezier(0.21, 0.84, 0.62, 0.99) 1.5s;
+  -moz-animation: activation-enabled 0.5s cubic-bezier(0.21, 0.84, 0.62, 0.99) 1.5s;
+  animation: activation-enabled 0.5s cubic-bezier(0.21, 0.84, 0.62, 0.99) 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.right-hand {
+  -webkit-transform: translate3d(100%, 100%, 0);
+  -moz-transform: translate3d(100%, 100%, 0);
+  -ms-transform: translate3d(100%, 100%, 0);
+  -o-transform: translate3d(100%, 100%, 0);
+  transform: translate3d(100%, 100%, 0);
+  z-index: 15;
+  width: 33.25em;
+  bottom: -13em;
+  left: 50%;
+  margin-left: -3.5em;
+}
+
+.in-view .right-hand {
+  -webkit-animation: activate-right-hand 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 0.5s, activate-right-hand-away 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2s;
+  -moz-animation: activate-right-hand 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 0.5s, activate-right-hand-away 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2s;
+  animation: activate-right-hand 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 0.5s, activate-right-hand-away 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.pie-chart {
+  -webkit-transform: scale(0.1) rotate(-360deg);
+  -moz-transform: scale(0.1) rotate(-360deg);
+  -ms-transform: scale(0.1) rotate(-360deg);
+  -o-transform: scale(0.1) rotate(-360deg);
+  transform: scale(0.1) rotate(-360deg);
+  opacity: 0;
+  width: 5em;
+  left: 50%;
+  margin-left: -2.5em;
+  top: 4em;
+}
+
+.in-view .pie-chart {
+  -webkit-animation: pie-chart-in 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2.25s;
+  -moz-animation: pie-chart-in 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2.25s;
+  animation: pie-chart-in 1s cubic-bezier(0.21, 0.84, 0.62, 0.99) 2.25s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.bar-chart {
+  opacity: 0;
+  width: 4em;
+  left: 50%;
+  margin-left: -2em;
+  bottom: 1em;
+}
+
+.in-view .bar-chart {
+  -webkit-animation: bar-chart-in 1.25s cubic-bezier(0.21, 0.84, 0.62, 0.99) 3s;
+  -moz-animation: bar-chart-in 1.25s cubic-bezier(0.21, 0.84, 0.62, 0.99) 3s;
+  animation: bar-chart-in 1.25s cubic-bezier(0.21, 0.84, 0.62, 0.99) 3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/*==========================================
 	GENERIC ALL ANIMATION FINISH
 ============================================ */
 /*==========================================
@@ -1568,6 +1717,9 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 ============================================ */
 /*==========================================
 	Slide 3
+============================================ */
+/*==========================================
+	SLIDE 4
 ============================================ */
 /* ==========================================================================
    MEDIA QUERIES
@@ -2487,6 +2639,177 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
     -ms-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
     -o-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
     transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/*==========================================
+  SLIDE 4
+============================================ */
+@-webkit-keyframes activate-right-hand {
+  from {
+    -webkit-transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes activate-right-hand {
+  from {
+    -moz-transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes activate-right-hand {
+  from {
+    -webkit-transform: translate3d(100%, 100%, 0);
+    -moz-transform: translate3d(100%, 100%, 0);
+    -ms-transform: translate3d(100%, 100%, 0);
+    -o-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -ms-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -o-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes activate-right-hand-away {
+  from {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(5%, 20%, 0);
+  }
+}
+
+@-moz-keyframes activate-right-hand-away {
+  from {
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  to {
+    -moz-transform: translate3d(5%, 20%, 0);
+  }
+}
+
+@keyframes activate-right-hand-away {
+  from {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -ms-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -o-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(5%, 20%, 0);
+    -moz-transform: translate3d(5%, 20%, 0);
+    -ms-transform: translate3d(5%, 20%, 0);
+    -o-transform: translate3d(5%, 20%, 0);
+    transform: translate3d(5%, 20%, 0);
+  }
+}
+
+@-webkit-keyframes activation-enabled {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes activation-enabled {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes activation-enabled {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pie-chart-in {
+  from {
+    -webkit-transform: scale(0.1) rotate(-360deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes pie-chart-in {
+  from {
+    -moz-transform: scale(0.1) rotate(-360deg);
+  }
+  to {
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pie-chart-in {
+  from {
+    -webkit-transform: scale(0.1) rotate(-360deg);
+    -moz-transform: scale(0.1) rotate(-360deg);
+    -ms-transform: scale(0.1) rotate(-360deg);
+    -o-transform: scale(0.1) rotate(-360deg);
+    transform: scale(0.1) rotate(-360deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -ms-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    -o-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bar-chart-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes bar-chart-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bar-chart-in {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }

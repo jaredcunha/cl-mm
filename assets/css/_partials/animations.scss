@@ -507,6 +507,100 @@
 	}
 }
 
+/*==========================================
+	SLIDE 4
+============================================ */
+.animation-wrap--report {
+	font-size: .75em;
+	@include respond-to(expansionA__minor) {
+		font-size: 1.1em;
+	}
+	@include respond-to(expansionC) {
+		font-size: 1.4em;
+	}
+	@include respond-to(landscape-mobile) {
+		font-size: .75em;
+	}
+	@include respond-to(expansionHeightA) {
+		font-size: 1.8em;
+	}
+}
+
+.left-hand {
+	width: 29.3em;
+	height: 44.4em;
+	bottom: -12em;
+    left: 50%;
+  	margin-left: -26em;
+}
+
+.phone-hand {
+	width: 29.3em;
+	top: 0;
+	z-index: 5;
+}
+
+.fingers {
+	right: 0;
+	width: 3.5em;
+	z-index: 10;
+}
+
+.activate-screens {
+	z-index:7;
+	left: 18.8em;
+    top: 1em;
+}
+
+.activate-screen1 {
+	width: 7.7em;
+}
+.activate-screen2 {
+	width: 7.7em;
+	opacity: 0;
+	.in-view & {
+		@include animation(activation-enabled .5s $smoothEaseOut 1.5s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.right-hand {
+	@include activate-right-hand-start;
+	z-index: 15;
+	width: 33.25em;
+	bottom: -13em;
+	left: 50%;
+    margin-left: -3.5em;
+	.in-view & {
+		@include animation(activate-right-hand 1s $smoothEaseOut .5s, activate-right-hand-away 1s $smoothEaseOut 2s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.pie-chart {
+	@include pie-chart-start;
+	width: 5em;
+	left: 50%;
+	margin-left: -2.5em;
+	top: 4em;
+	.in-view & {
+		@include animation(pie-chart-in 1s $smoothEaseOut 2.25s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
+.bar-chart {
+	@include bar-chart-start;
+	width: 4em;
+	left: 50%;
+	margin-left: -2em;
+	bottom: 1em;
+	.in-view & {
+		@include animation(bar-chart-in 1.25s $smoothEaseOut 3s);
+		@include animation-fill-mode(forwards);
+	}
+}
+
 
 
 @import "keyframes";

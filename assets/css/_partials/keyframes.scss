@@ -235,3 +235,51 @@
     @include all-finish;
   }
 }
+
+/*==========================================
+  SLIDE 4
+============================================ */
+@include keyframes(activate-right-hand) {
+  from {
+    @include activate-right-hand-start;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(activate-right-hand-away) {
+  from {
+    @include all-finish;
+  }
+  to {
+    @include transform(translate3d(5%,20%,0));
+  }
+}
+
+@include keyframes(activation-enabled) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframes(pie-chart-in) {
+  from {
+    @include transform(scale(.1) rotate(-360deg));
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(bar-chart-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
