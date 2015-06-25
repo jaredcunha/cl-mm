@@ -1,0 +1,74 @@
+@import "bourbon/bourbon";
+@import "_modules/_all";
+
+.contact-form {
+	position: relative;
+	margin: -1em 0 12em;
+	form.form {
+	    color: #666;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    font-size: 1em;
+	    margin: 0 auto;
+	    text-align: left;
+	    max-width: 50em;
+	    overflow: hidden;
+	    height: 1%;
+	    &:before {
+			content: "";
+			display: block;
+			width: 50%;
+			height: 1px;
+			border-top: 1px solid #fff;
+			text-align: center;
+			clear: both;
+			margin: 0 auto 3em;
+		}
+	}
+	form.form p {
+		clear: none;
+	}
+	form.form p.required label, form.form span.required label {
+	    background: none;
+	}
+	form.form input.text {
+	    width: 100%;
+	    border: none;
+	    border-radius: 4px; 
+	    font-size: 1.6em;
+	    padding: 1em;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    color: #262626;
+	    &.empty{
+	    	color: #999;
+	    }
+	}
+
+	form.form p label {
+		position: absolute;
+		left: -9999em;
+	}
+
+	p.form-field {
+		width: 100%;
+		padding: 0 2.5%;
+		margin: 1em 0;
+		@include respond-to(expansionA) {
+			float: left;
+			width: 50%;
+		}
+	}
+	p.form-field.company {
+		@include respond-to(expansionA) {
+			width: 100%;
+		}
+	}
+	form.form p.submit {
+		padding: 0 2.5%;
+		font-family: "Arial Rounded MT Bold", helvetica;
+		input {
+			@extend .btn;
+			width: 100%;
+			display: block;
+		}
+	}
+}

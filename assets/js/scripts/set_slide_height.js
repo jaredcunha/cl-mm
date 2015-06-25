@@ -5,7 +5,7 @@ var winHeight = $(window).height();
 // make sure div stays full width/height on resize
 $(window).resize(function(){
 	var winHeight = $(window).height();
-    $('.slide').not('#browse').css({
+    $('.slide').not('#contactAndFAQ').css({
 	    'height': winHeight,
 	});
 });
@@ -13,7 +13,7 @@ $(window).resize(function(){
 
 // set initial div height / width
 $(document).ready(function(){
-    $('.slide').not('#browse').css({
+    $('.slide').not('#contactAndFAQ').css({
 	    'height': winHeight,
 	});
 });

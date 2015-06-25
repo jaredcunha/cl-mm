@@ -43,6 +43,10 @@
 	background: $prince;
 }
 
+.slide--contact-form {
+	background: $slushie;
+}
+
 /*==========================================
 	SLIDE CONTENT
 ============================================ */ 
@@ -109,6 +113,7 @@
 	margin-top: 0;
 	line-height: 1.5;
 	opacity: .75;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	@include respond-to(expansionA__minor) {
 		font-size: 1.4em;
 	}

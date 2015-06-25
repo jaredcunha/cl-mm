@@ -10,7 +10,7 @@
 
 body {
 	font-size: 62.5%;
-	font-family: "Proxima Nova Soft", helvetica;
+	font-family: "Arial Rounded MT Bold", helvetica;
 	background: #E8F4FA;
 	@include respond-to(expansionD) {
 		font-size: 68%;
@@ -69,14 +69,16 @@ nav > ul > li {
 ============================================ */ 
 .btn {
 	border-radius: 5px;
-	background: #fff;
-	color: $link_color;
+	background: $link_color;
+	color: #fff;
 	display: inline-block;
 	margin: 0 auto;
-	padding: .5em 1em;
+	padding: 1em;
 	text-decoration: none;
-	font-size: 2.5em;
+	font-size: 1.8em;
 	width: auto;
+	border: 0;
+	text-transform: lowercase;
 	@include respond-to(landscape-mobile) {
 		font-size: 1.8em;
 	}

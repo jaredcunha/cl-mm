@@ -427,7 +427,7 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 
 body {
   font-size: 62.5%;
-  font-family: "Proxima Nova Soft", helvetica;
+  font-family: "Arial Rounded MT Bold", helvetica;
   background: #E8F4FA;
 }
 
@@ -494,20 +494,22 @@ nav > ul > li {
 /*==========================================
 	BUTTONS
 ============================================ */
-.btn {
+.btn, .contact-form form.form p.submit input {
   border-radius: 5px;
-  background: #fff;
-  color: #0088cc;
+  background: #0088cc;
+  color: #fff;
   display: inline-block;
   margin: 0 auto;
-  padding: 0.5em 1em;
+  padding: 1em;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 1.8em;
   width: auto;
+  border: 0;
+  text-transform: lowercase;
 }
 
 @media only screen and (max-height: 370px) and (max-width: 700px) {
-  .btn {
+  .btn, .contact-form form.form p.submit input {
     font-size: 1.8em;
   }
 }
@@ -627,6 +629,10 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   background: #544aa1;
 }
 
+.slide--contact-form {
+  background: #5fb8dd;
+}
+
 /*==========================================
 	SLIDE CONTENT
 ============================================ */
@@ -722,6 +728,7 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   margin-top: 0;
   line-height: 1.5;
   opacity: .75;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @media only screen and (min-width: 369px) {
@@ -866,12 +873,6 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 @media only screen and (min-width: 700px) {
   .animation-wrap--decide-discount {
     font-size: 1.6em;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .animation-wrap--decide-discount {
-    font-size: 1.7em;
   }
 }
 
@@ -2822,4 +2823,196 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   to {
     opacity: 1;
   }
+}
+
+/*==========================================
+	GENERIC ALL ANIMATION FINISH
+============================================ */
+/*==========================================
+	SLIDE 1
+============================================ */
+/*==========================================
+	Slide 2
+============================================ */
+/*==========================================
+	Slide 3
+============================================ */
+/*==========================================
+	SLIDE 4
+============================================ */
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+/*
+
+THE PLAN
+
+MEDIA QUERIES PRIORITY FOR NORMAL LAYOUT, THEN WE'LL CREATE 
+EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
+
+*/
+.faq {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 0.5em 0.5em 10em;
+}
+
+.faq:target .faq-list {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  max-height: auto;
+}
+
+.faq-list {
+  -webkit-transition: max-height 5s ease-in-out;
+  -moz-transition: max-height 5s ease-in-out;
+  transition: max-height 5s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.in-view .faq-list {
+  max-height: 7000em;
+}
+
+.faq__section-heading {
+  text-align: center;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.faq__item {
+  padding: 1em 2.5%;
+}
+
+.faq__item h3 {
+  font-size: 1.6em;
+  color: #d9d9d9;
+}
+
+.faq__item p, .faq__item ul {
+  font-size: 1.4em;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.money-plate {
+  bottom: 0;
+  width: 20em;
+  left: 50%;
+  margin-left: -10em;
+}
+
+/*==========================================
+	GENERIC ALL ANIMATION FINISH
+============================================ */
+/*==========================================
+	SLIDE 1
+============================================ */
+/*==========================================
+	Slide 2
+============================================ */
+/*==========================================
+	Slide 3
+============================================ */
+/*==========================================
+	SLIDE 4
+============================================ */
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+/*
+
+THE PLAN
+
+MEDIA QUERIES PRIORITY FOR NORMAL LAYOUT, THEN WE'LL CREATE 
+EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
+
+*/
+.contact-form {
+  position: relative;
+  margin: -1em 0 12em;
+}
+
+.contact-form form.form {
+  color: #666;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 50em;
+  overflow: hidden;
+  height: 1%;
+}
+
+.contact-form form.form:before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 1px;
+  border-top: 1px solid #fff;
+  text-align: center;
+  clear: both;
+  margin: 0 auto 3em;
+}
+
+.contact-form form.form p {
+  clear: none;
+}
+
+.contact-form form.form p.required label, .contact-form form.form span.required label {
+  background: none;
+}
+
+.contact-form form.form input.text {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.6em;
+  padding: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #262626;
+}
+
+.contact-form form.form input.text.empty {
+  color: #999;
+}
+
+.contact-form form.form p label {
+  position: absolute;
+  left: -9999em;
+}
+
+.contact-form p.form-field {
+  width: 100%;
+  padding: 0 2.5%;
+  margin: 1em 0;
+}
+
+@media only screen and (min-width: 500px) {
+  .contact-form p.form-field {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .contact-form p.form-field.company {
+    width: 100%;
+  }
+}
+
+.contact-form form.form p.submit {
+  padding: 0 2.5%;
+  font-family: "Arial Rounded MT Bold", helvetica;
+}
+
+.contact-form form.form p.submit input {
+  width: 100%;
+  display: block;
 }

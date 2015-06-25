@@ -7,4 +7,14 @@ $(document).ready(function(){
       $(this).removeClass("in-view");
     }
   });
+  
+});
+
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       setTimeout(function(){
+		  $('.faq').addClass("in-view");
+		}, 750);
+   }
 });
