@@ -15,3 +15,16 @@ $(function() {
     }
   });
 });
+
+$(document).ready(function(){
+  if( $('.contact-form').find('p.errors').length ) {
+    var target = $(this.hash);
+      target = $("#pardot-form1");
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+  }
+});

@@ -10,7 +10,7 @@
 .svg-item {
 	display: block;
 	width: 100%;
-	img {
+	img, svg, image {
 		display: block;
 		width: 100%;
 	}
@@ -18,7 +18,7 @@
 
 .svg-wrap {
 	position: absolute;
-	img {
+	img, svg, image {
 		display: block;
 		width: 100%;
 	}
