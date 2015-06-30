@@ -2859,22 +2859,20 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 }
 
 .faq:target .faq-list {
-  -webkit-transition: none;
-  -moz-transition: none;
-  transition: none;
-  max-height: auto;
+  max-height: none;
 }
 
 .faq-list {
-  -webkit-transition: max-height 5s ease-in-out;
-  -moz-transition: max-height 5s ease-in-out;
-  transition: max-height 5s ease-in-out;
   max-height: 0;
   overflow: hidden;
 }
 
-.in-view .faq-list {
-  max-height: 7000em;
+.faq-list.in-view {
+  max-height: none;
+}
+
+#faqList:target {
+  max-height: none;
 }
 
 .faq__section-heading {
@@ -2883,6 +2881,19 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 2em;
+}
+
+.faq__toggle-button {
+  text-align: center;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.6em;
+  text-decoration: underline;
+}
+
+.faq__toggle-button:hover {
+  text-decoration: none;
 }
 
 .faq__item {
@@ -2936,7 +2947,7 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 */
 .contact-form {
   position: relative;
-  margin: -1em 0 12em;
+  margin: -1em 0 3em;
 }
 
 .contact-form form.form {
@@ -2974,24 +2985,36 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   border: none;
   border-radius: 4px;
   font-size: 1.6em;
-  padding: 1em;
+  padding: 1.25em 1em 1em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #262626;
 }
 
-.contact-form form.form input.text.empty {
+.contact-form form.form p label {
+  -webkit-transition: all 0.05s linear;
+  -moz-transition: all 0.05s linear;
+  transition: all 0.05s linear;
+  position: absolute;
+  left: 2.2em;
+  top: .3em;
+  font-size: 1.2em;
   color: #999;
+  text-align: left;
+  font-weight: normal;
 }
 
-.contact-form form.form p label {
-  position: absolute;
-  left: -9999em;
+.contact-form form.form p label.place-infield {
+  font-size: 1.6em;
+  left: 1.7em;
+  top: 1em;
 }
 
 .contact-form p.form-field {
   width: 100%;
   padding: 0 2.5%;
   margin: 1em 0;
+  position: relative;
+  text-transform: lowercase;
 }
 
 @media only screen and (min-width: 500px) {

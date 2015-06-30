@@ -62,34 +62,27 @@
         $(window).scroll();
     });
 })(jQuery);
+$(document).ready(function(){
+	$('.faq__toggle-button a').on('click',function(){
+		$('#faqList').addClass("in-view");
+	})
+});
 /* Infield Form Labels =================================================================*/
 $(document).ready(function(){
 			var innerLabel = $('label.field-label');
 			var innerLabelInput = $('.form-field input');
-			innerLabel.each(function() {
-				var stolen = $(this).text();
-				var sibValue = $(this).siblings('input').val();
-				if (sibValue!==''){
-					$(this).siblings('input').attr('value', sibValue);
-				}else{
-					$(this).siblings('input').attr('value', stolen);
-				}
-			});
 			innerLabelInput.addClass('empty');
+			innerLabel.addClass("place-infield");
 			innerLabelInput.focus(function() { 
-				if (this.value === this.defaultValue){
-					this.value = '';
-					$(this).addClass('empty'); 
-				} 
-				if(this.value !== this.defaultValue){ 
+				if( !$(this).val() ){ 
 					this.select();
-					$(this).removeClass('empty');
+					$(this).prev(innerLabel).removeClass("place-infield"); 
 				} 
 			}); 
 			innerLabelInput.blur(function() { 
 				if (this.value === ''){ 
-					this.value = this.defaultValue; 
-					$(this).addClass('empty');
+					//this.value = this.defaultValue;
+					$(this).prev(innerLabel).addClass("place-infield"); 
 				}
 			});
 });
@@ -102,16 +95,6 @@ $(document).ready(function(){
       $(this).removeClass("in-view");
     }
   });
-  
-});
-
-
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       setTimeout(function(){
-		  $('.faq').addClass("in-view");
-		}, 750);
-   }
 });
 // Signup Marketing scripts go here
 

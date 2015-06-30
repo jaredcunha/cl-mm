@@ -7,18 +7,20 @@
 	max-width: 50em;
 	padding: .5em .5em 10em;
 	&:target .faq-list {
-		@include transition(none);
-		max-height: auto;
+		max-height: none;
 	}
 }
 
 .faq-list {
-	@include transition(max-height 5.0s ease-in-out);
 	max-height: 0;
 	overflow: hidden;
-	.in-view &{
-		max-height: 7000em;
+	&.in-view{
+		max-height: none;
 	}
+}
+
+#faqList:target {
+	max-height: none;
 }
 
 .faq__section-heading {
@@ -27,6 +29,18 @@
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	font-size: 2em;
+}
+
+.faq__toggle-button {
+	text-align: center;
+	color: #fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 1.6em;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .faq__item {
