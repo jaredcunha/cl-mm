@@ -631,6 +631,15 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 
 .slide--contact-form {
   background: #5fb8dd;
+  padding-bottom: 10em;
+}
+
+.slide--faq {
+  background: #5fb8dd;
+}
+
+.slide--thankyou {
+  background: #5fb8dd;
 }
 
 /*==========================================
@@ -1497,6 +1506,10 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   animation-fill-mode: forwards;
 }
 
+.no-csstransforms3d .x-out {
+  opacity: 1;
+}
+
 .qr-code {
   -webkit-transform: translate3d(0, 50em, 0);
   -moz-transform: translate3d(0, 50em, 0);
@@ -1597,6 +1610,12 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 @media only screen and (min-width: 700px) {
   .animation-wrap--report {
     font-size: 1.4em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .animation-wrap--report {
+    font-size: 1.6em;
   }
 }
 
@@ -2853,26 +2872,16 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 */
 .faq {
   text-align: left;
-  margin: 0 auto;
+  margin: -3em auto 0;
   max-width: 50em;
-  padding: 0.5em 0.5em 10em;
+  padding: 0 0.5em 5em;
 }
 
-.faq:target .faq-list {
-  max-height: none;
-}
-
-.faq-list {
-  max-height: 0;
-  overflow: hidden;
-}
-
-.faq-list.in-view {
-  max-height: none;
-}
-
-#faqList:target {
-  max-height: none;
+.faq__closing {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4em;
+  padding-top: 2em;
 }
 
 .faq__section-heading {
@@ -2889,10 +2898,15 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 1.6em;
-  text-decoration: underline;
+  line-height: 1.5;
 }
 
-.faq__toggle-button:hover {
+.faq__toggle-button a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.faq__toggle-button a:hover {
   text-decoration: none;
 }
 
@@ -2910,6 +2924,18 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
+}
+
+.faq__item a {
+  text-decoration: underline;
+}
+
+.faq__item a:hover {
+  text-decoration: none;
+}
+
+.signup-prompt {
+  margin-bottom: 20em;
 }
 
 .money-plate {
@@ -2948,6 +2974,12 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 .contact-form {
   position: relative;
   margin: -1em 0 3em;
+}
+
+.contact-form::after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
 .contact-form form.form {
@@ -3031,9 +3063,10 @@ EXPANSIONA__WIDESCREEN FOR 16:9 OR WHATEVER WE DO
 }
 
 .contact-form form.form p.submit {
-  padding: 0 2.5%;
+  padding: 2em 2.5% 6em;
   font-family: "Arial Rounded MT Bold", helvetica;
   margin: 0;
+  clear: both;
 }
 
 .contact-form form.form p.submit input {

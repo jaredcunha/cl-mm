@@ -448,6 +448,9 @@
 		@include animation(xOut .2s $smoothEaseOut 0s);
 		@include animation-fill-mode(forwards);
 	}
+	.no-csstransforms3d & {
+		opacity: 1;
+	}
 }
 
 .qr-code {
@@ -514,6 +517,9 @@
 	}
 	@include respond-to(expansionC) {
 		font-size: 1.4em;
+	}
+	@include respond-to(expansionD) {
+		font-size: 1.6em;
 	}
 	@include respond-to(landscape-mobile) {
 		font-size: .75em;

@@ -3,24 +3,16 @@
 
 .faq {
 	text-align: left;
-	margin: 0 auto;
+	margin: -3em auto 0;
 	max-width: 50em;
-	padding: .5em .5em 10em;
-	&:target .faq-list {
-		max-height: none;
-	}
+	padding: 0 .5em 5em;
 }
 
-.faq-list {
-	max-height: 0;
-	overflow: hidden;
-	&.in-view{
-		max-height: none;
-	}
-}
-
-#faqList:target {
-	max-height: none;
+.faq__closing {
+	text-align: center;
+	color: #fff;
+	font-size: 1.4em;
+	padding-top: 2em;
 }
 
 .faq__section-heading {
@@ -37,10 +29,14 @@
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	font-size: 1.6em;
-	text-decoration: underline;
-	&:hover {
-		text-decoration: none;
-	}
+	line-height: 1.5;
+	a {
+		text-decoration: underline;
+		color: #fff;
+		&:hover {
+			text-decoration: none;
+		}
+	}	
 }
 
 .faq__item {
@@ -55,6 +51,16 @@
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		line-height: 1.5;
 	}
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.signup-prompt {
+	margin-bottom: 20em;
 }
 
 .money-plate {

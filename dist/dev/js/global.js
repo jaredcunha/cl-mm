@@ -62,17 +62,19 @@
         $(window).scroll();
     });
 })(jQuery);
-$(document).ready(function(){
-	$('.faq__toggle-button a').on('click',function(){
-		$('#faqList').addClass("in-view");
-	})
-});
 /* Infield Form Labels =================================================================*/
 $(document).ready(function(){
 			var innerLabel = $('label.field-label');
 			var innerLabelInput = $('.form-field input');
-			innerLabelInput.addClass('empty');
 			innerLabel.addClass("place-infield");
+
+			innerLabelInput.each(function() {
+			    if( $(this).val() ){ 
+					$(this).prev(innerLabel).removeClass("place-infield"); 
+				}
+			});
+
+
 			innerLabelInput.focus(function() { 
 				if( !$(this).val() ){ 
 					this.select();
@@ -103,7 +105,7 @@ var winHeight = $(window).height();
 // make sure div stays full width/height on resize
 $(window).resize(function(){
 	var winHeight = $(window).height();
-    $('.slide').not('#contactAndFAQ').css({
+    $('.slide').not('#contactAndFAQ, #contact').css({
 	    'height': winHeight,
 	});
 });
@@ -111,7 +113,7 @@ $(window).resize(function(){
 
 // set initial div height / width
 $(document).ready(function(){
-    $('.slide').not('#contactAndFAQ').css({
+    $('.slide').not('#contactAndFAQ, #contact').css({
 	    'height': winHeight,
 	});
 });
@@ -148,7 +150,8 @@ $(document).ready(function(){
 $(document).ready(function(){
 	if (!Modernizr.svg) {
 	  $('img[src$=".svg"]').each(function() {
-	    $(this).attr('src', $(this).data('fallback'));
+	    //$(this).attr('src', $(this).data('fallback'));
+	    $(this) = $(this).replace('.svg','.png');
 	  });
 	}
 });

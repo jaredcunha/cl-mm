@@ -18,6 +18,7 @@
     svgmin = require('gulp-svgmin'),
     imagemin = require('gulp-imagemin'),
     filter    = require('gulp-filter'),
+    svg2png = require('gulp-svg2png'),
 
     // Stats and Things
     size = require('gulp-size');
@@ -71,6 +72,13 @@
         .pipe(imagemin())
         .pipe(gulp.dest('./dev/img'))
         .pipe(gulp.dest('./prod/img'));
+    });
+
+    gulp.task('svg2png', function () {
+        gulp.src('assets/images/*.svg')
+            .pipe(svg2png())
+            .pipe(gulp.dest('dist/dev/images/svg'))
+            .pipe(gulp.dest('dist/prod/images/svg'));
     });
 
     // Stats and Things

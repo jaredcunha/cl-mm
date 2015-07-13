@@ -2,8 +2,15 @@
 $(document).ready(function(){
 			var innerLabel = $('label.field-label');
 			var innerLabelInput = $('.form-field input');
-			innerLabelInput.addClass('empty');
 			innerLabel.addClass("place-infield");
+
+			innerLabelInput.each(function() {
+			    if( $(this).val() ){ 
+					$(this).prev(innerLabel).removeClass("place-infield"); 
+				}
+			});
+
+
 			innerLabelInput.focus(function() { 
 				if( !$(this).val() ){ 
 					this.select();
