@@ -2,6 +2,37 @@
 @import "_modules/_all";
 
 /*==========================================
+  SLIDE 2
+============================================ */
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(closeIn) {
+  from {
+    @include transform(scale(.1));;
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+@include keyframes(videoIn) {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0,6em,0));
+  }
+  to {
+    @include all-finish;
+  }
+}
+
+/*==========================================
 	SLIDE 1
 ============================================ */
 @include keyframes(touchCalendar) {

@@ -1,4 +1,4 @@
-// npm install gulp-sass gulp-minify-css gulp-uglify gulp-concat gulp-rename gulp-jshint gulp-clean gulp-svgmin gulp-imagemin gulp-size
+// npm install --save-dev gulp-sass gulp-minify-css gulp-uglify gulp-concat gulp-rename gulp-jshint gulp-clean gulp-svgmin gulp-imagemin gulp-size
 
     // Gulp
     var gulp = require('gulp'),
@@ -19,6 +19,9 @@
     imagemin = require('gulp-imagemin'),
     filter    = require('gulp-filter'),
     svg2png = require('gulp-svg2png'),
+
+    // Serve
+    connect = require('gulp-connect'),
 
     // Stats and Things
     size = require('gulp-size');
@@ -42,7 +45,7 @@
       gulp.src(['assets/js/libs/*.js', 'assets/js/plugins/*.js', 'assets/js/scripts/*.js'])
         .pipe(concat('global.js'))
         .pipe(gulp.dest('dist/dev/js'))
-        .pipe(uglify('comments:false'))
+        .pipe(uglify())
         .pipe(gulp.dest('dist/prod/js'))
     });
 
@@ -79,6 +82,11 @@
             .pipe(svg2png())
             .pipe(gulp.dest('dist/dev/images/svg'))
             .pipe(gulp.dest('dist/prod/images/svg'));
+    });
+
+    // Serve
+    gulp.task('webserver', function() {
+      connect.server();
     });
 
     // Stats and Things

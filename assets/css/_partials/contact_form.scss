@@ -68,7 +68,8 @@
 			width: 50%;
 		}
 	}
-	p.form-field.company {
+	p.form-field.company,
+	p.form-field.website  {
 		@include respond-to(expansionA) {
 			width: 100%;
 		}
