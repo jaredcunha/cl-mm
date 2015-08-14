@@ -95,10 +95,17 @@
       connect.server();
     });
 
+    gulp.task('clean-folders', function () {
+      return gulp.src(['./dist/prod/html', './dist/prod/js'], {read: false})
+        .pipe(clean());
+    });
+
     // Build Index for Production
     gulp.task('indexforprod', function() {
-        gulp.src("./index.html")
-            .pipe(rename("index_prod.html"))
+        gulp.src("./*.html")
+            .pipe(rename(function (path) {
+              //path.suffix += "_prod";
+            }))
             .pipe(assetpaths({
                 newDomain: 'http://www.jaredcunha.com/mm_images',
                 oldDomain : '/dist/prod/images/svg/',
@@ -111,14 +118,14 @@
                 'js': '/dist/prod/js/global.js',
                 'contact-form': '%%content%%'
             }))
-            .pipe(gulp.dest('./'));
+            .pipe(gulp.dest('./dist/prod/html'));
         gulp.src(['/dist/dev/css/global.css'])
     });
 
     gulp.task('watch', function(){
         gulp.watch('assets/css/**/*.scss', ['compile-css']);
         gulp.watch(["assets/js/**/*.js", "!assets/js/build/*.js"], ['scripts', 'lint', 'move']);
-        gulp.watch('index.html', ['indexforprod']);
+        gulp.watch('*.html', ['indexforprod']);
     });
 
-    gulp.task('default', ['watch', 'move', 'indexforprod', 'webserver']);
+    gulp.task('default', ['clean-folders', 'watch','scripts', 'lint', 'move', 'indexforprod', 'webserver']);
