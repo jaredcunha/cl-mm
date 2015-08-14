@@ -117,8 +117,8 @@
                 templates: true
             }))
             .pipe(htmlreplace({
-                'css': '/dist/prod/css/global.css',
-                'js': '/dist/prod/js/global.js',
+                'css': 'http://info.livingsocialbusiness.com/l/74522/2015-06-25/mgsy3/74522/23998/global.css',
+                'js': 'http://info.livingsocialbusiness.com/l/74522/2015-06-25/mgsym/74522/24000/global.js',
                 'contact-form': '%%content%%'
             }))
             .pipe(gulp.dest('dist/prod/html'));
