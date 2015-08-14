@@ -24,6 +24,8 @@
     connect = require('gulp-connect'),
 
     // Stats and Things
+    htmlreplace = require('gulp-html-replace'),
+    rename = require('gulp-rename'),
     size = require('gulp-size');
 
     // compile all your Sass
@@ -46,7 +48,7 @@
         .pipe(concat('global.js'))
         .pipe(gulp.dest('dist/dev/js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/prod/js'))
+        .pipe(gulp.dest('dist/prod/js'));
     });
 
     gulp.task('lint', function() {
@@ -57,9 +59,9 @@
 
     gulp.task('move', function(){
       gulp.src('assets/js/polyfills/*.*')
-      .pipe(gulp.dest('dist/prod/js'));
+        .pipe(gulp.dest('dist/prod/js'));
       gulp.src('assets/svg/*')
-      .pipe(gulp.dest('dist/prod/svg'));
+        .pipe(gulp.dest('dist/prod/svg'));
     });
 
     // Images
@@ -96,11 +98,22 @@
         .pipe(gulp.dest('./prod'));
     });
 
-//
+    // Build Index for Production
+    gulp.task('indexforprod', function() {
+        gulp.src("./index.html")
+            .pipe(rename("index_prod.html"))
+            .pipe(htmlreplace({
+                'css': '/dist/prod/css/global.css',
+                'js': '/dist/prod/js/global.js',
+                'contact-form': '%%content%%'
+            }))
+            .pipe(gulp.dest('./'))  
+    });
 
     gulp.task('watch', function(){
         gulp.watch('assets/css/**/*.scss', ['sass']);
         gulp.watch(["assets/js/**/*.js", "!assets/js/build/*.js"], ['scripts', 'lint', 'move']);
+        gulp.watch('index.html', ['indexforprod']);
     });
 
-    gulp.task('default', ['watch', 'move'])
+    gulp.task('default', ['watch', 'move', 'indexforprod', 'webserver'])
