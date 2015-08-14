@@ -26,6 +26,7 @@
     // Stats and Things
     htmlreplace = require('gulp-html-replace'),
     rename = require('gulp-rename'),
+    assetpaths = require('gulp-assetpaths'),
     size = require('gulp-size');
 
     // compile all your Sass
@@ -107,7 +108,14 @@
                 'js': '/dist/prod/js/global.js',
                 'contact-form': '%%content%%'
             }))
-            .pipe(gulp.dest('./'))  
+            .pipe(assetpaths({
+                newDomain: 'http://www.jaredcunha.com/mm_images',
+                oldDomain : '/dist/prod/images/svg/',
+                docRoot : 'public_html',
+                filetypes : ['jpg','jpeg','png','gif','svg'],
+                templates: true
+            }))
+            .pipe(gulp.dest('./')); 
     });
 
     gulp.task('watch', function(){
@@ -116,4 +124,4 @@
         gulp.watch('index.html', ['indexforprod']);
     });
 
-    gulp.task('default', ['watch', 'move', 'indexforprod', 'webserver'])
+    gulp.task('default', ['watch', 'move', 'indexforprod', 'webserver']);

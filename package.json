@@ -23,6 +23,7 @@
     "gulp-uglify": "^1.2.0"
   },
   "devDependencies": {
+    "gulp-assetpaths": "^0.1.1",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-html-replace": "^1.5.1",
