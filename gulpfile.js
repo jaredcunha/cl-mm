@@ -5,6 +5,7 @@
 
     // Sass/CSS stuff
     sass = require('gulp-sass'),
+    maps      = require('gulp-sourcemaps'),
     minifycss = require('gulp-minify-css'),
 
     // JavaScript
@@ -32,11 +33,13 @@
     // compile all your Sass
     gulp.task('compile-css', function (){
         gulp.src(['assets/css/global.scss'])
+            .pipe(maps.init())
             .pipe(sass({
                 includePaths: require('node-bourbon').includePaths,
                 errLogToConsole: false,
                 outputStyle: 'expanded'
             }))
+            .pipe(maps.write('./'))
             .pipe(gulp.dest('dist/dev/css'));
         gulp.src(['./dist/dev/css/global.css'])
             .pipe(urlAdjuster({
@@ -102,7 +105,7 @@
 
     // Build Index for Production
     gulp.task('indexforprod', function() {
-        gulp.src("./*.html")
+        return gulp.src("./*.html")
             .pipe(rename(function (path) {
               //path.suffix += "_prod";
             }))
@@ -118,7 +121,7 @@
                 'js': '/dist/prod/js/global.js',
                 'contact-form': '%%content%%'
             }))
-            .pipe(gulp.dest('./dist/prod/html'));
+            .pipe(gulp.dest('dist/prod/html'));
         gulp.src(['/dist/dev/css/global.css'])
     });
 
@@ -128,4 +131,4 @@
         gulp.watch('*.html', ['indexforprod']);
     });
 
-    gulp.task('default', ['clean-folders', 'watch','scripts', 'lint', 'move', 'indexforprod', 'webserver']);
+    gulp.task('default', ['watch','scripts', 'lint', 'move', 'webserver']);
