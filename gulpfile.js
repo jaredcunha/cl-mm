@@ -1,4 +1,4 @@
-// npm install --save-dev gulp-sass gulp-minify-css gulp-uglify gulp-concat gulp-rename gulp-jshint gulp-clean gulp-svgmin gulp-imagemin gulp-size
+// npm install --save-dev gulp-sass gulp-minify-css gulp-uglify gulp-concat gulp-rename gulp-jshint gulp-clean gulp-svgmin gulp-imagemin 
 
     // Gulp
     var gulp = require('gulp'),
@@ -27,35 +27,38 @@
     htmlreplace = require('gulp-html-replace'),
     rename = require('gulp-rename'),
     assetpaths = require('gulp-assetpaths'),
-    size = require('gulp-size');
+    urlAdjuster = require('gulp-css-url-adjuster');
 
     // compile all your Sass
-    gulp.task('sass', function (){
+    gulp.task('compile-css', function (){
         gulp.src(['assets/css/global.scss'])
             .pipe(sass({
                 includePaths: require('node-bourbon').includePaths,
                 errLogToConsole: false,
-                includePaths: ['dist/dev/css'],
                 outputStyle: 'expanded'
             }))
-            .pipe(gulp.dest('dist/dev/css'))
+            .pipe(gulp.dest('dist/dev/css'));
+        gulp.src(['./dist/dev/css/global.css'])
+            .pipe(urlAdjuster({
+                replace:  ['/dist/dev/images','/brand/new'],
+            }))
             .pipe(minifycss())
-            .pipe(gulp.dest('dist/prod/css'));
+            .pipe(gulp.dest('./dist/prod/css'));
     });
 
     // Scripts
     gulp.task('scripts', function() {
-      gulp.src(['assets/js/libs/*.js', 'assets/js/plugins/*.js', 'assets/js/scripts/*.js'])
-        .pipe(concat('global.js'))
-        .pipe(gulp.dest('dist/dev/js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/prod/js'));
+        gulp.src(['assets/js/libs/*.js', 'assets/js/plugins/*.js', 'assets/js/scripts/*.js'])
+            .pipe(concat('global.js'))
+            .pipe(gulp.dest('dist/dev/js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/prod/js'));
     });
 
     gulp.task('lint', function() {
-      return gulp.src('assets/js/scripts/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        return gulp.src('assets/js/scripts/*.js')
+            .pipe(jshint())
+            .pipe(jshint.reporter('default'));
     });
 
     gulp.task('move', function(){
@@ -92,22 +95,10 @@
       connect.server();
     });
 
-    // Stats and Things
-    gulp.task('stats', function () {
-        gulp.src('./prod/**/*')
-        .pipe(size())
-        .pipe(gulp.dest('./prod'));
-    });
-
     // Build Index for Production
     gulp.task('indexforprod', function() {
         gulp.src("./index.html")
             .pipe(rename("index_prod.html"))
-            .pipe(htmlreplace({
-                'css': '/dist/prod/css/global.css',
-                'js': '/dist/prod/js/global.js',
-                'contact-form': '%%content%%'
-            }))
             .pipe(assetpaths({
                 newDomain: 'http://www.jaredcunha.com/mm_images',
                 oldDomain : '/dist/prod/images/svg/',
@@ -115,11 +106,17 @@
                 filetypes : ['jpg','jpeg','png','gif','svg'],
                 templates: true
             }))
-            .pipe(gulp.dest('./')); 
+            .pipe(htmlreplace({
+                'css': '/dist/prod/css/global.css',
+                'js': '/dist/prod/js/global.js',
+                'contact-form': '%%content%%'
+            }))
+            .pipe(gulp.dest('./'));
+        gulp.src(['/dist/dev/css/global.css'])
     });
 
     gulp.task('watch', function(){
-        gulp.watch('assets/css/**/*.scss', ['sass']);
+        gulp.watch('assets/css/**/*.scss', ['compile-css']);
         gulp.watch(["assets/js/**/*.js", "!assets/js/build/*.js"], ['scripts', 'lint', 'move']);
         gulp.watch('index.html', ['indexforprod']);
     });
